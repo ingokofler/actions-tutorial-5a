@@ -18,7 +18,12 @@
     "password": "JustAdemo1",
     "options": {
       "host": "localhost",
-      "dialect": "mssql",      
+      "dialect": "mssql",  
+      "dialectOptions": {
+        "options": {
+          "trustServerCertificate": true
+        }
+      },    
       "logging": false
     }
   },
