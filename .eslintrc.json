@@ -1,0 +1,36 @@
+{
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es2020": true
+    },
+    "extends": "eslint:recommended",    
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "ignorePatterns": [
+        "**/tests/*.js", 
+        "**/*.ps1", 
+        "**/*.md", 
+        "**/*.txt",
+         "**/*.json", 
+         "**/*.pem", 
+         "**/*.crt", 
+         "**/*.key"],
+    "rules": {
+        "indent": [4, "tab"]            
+        ,
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

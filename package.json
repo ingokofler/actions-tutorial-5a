@@ -1,0 +1,33 @@
+{
+  "name": "backendtemplate",
+  "version": "1.0.0",
+  "description": "template backend for SEAN-Stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha \"./tests/*.js\" --timeout 10000 --exit --configFile env-development.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acka99/SRMNEW"
+  },
+  "author": "kaa",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "express-bearer-token": "^2.4.0",
+    "sequelize": "^5.22.3",
+    "tedious": "^8.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-datetime": "^1.7.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.8.1",
+    "mocha": "^7.2.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+  }
+}

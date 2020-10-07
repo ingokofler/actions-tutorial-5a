@@ -1,0 +1,29 @@
+{
+  "name": "development-config",
+  "backend": {
+    "hostname": "demo.app.info",
+    "port": 8080,
+    "apiPrefix": "/api/v1"
+  },
+  "security": {
+    "certKeyFilePath": "./certs/demo-devcert-private-key.pem",
+    "certFilePath": "./certs/demo-devcert-public-key.pem",
+    "cors": {
+      "allowedOrigin": "http://localhost:4200"
+    }
+  },
+  "dbSettings": {
+    "database": "demoDB",
+    "username": "demoadmin",
+    "password": "JustAdemo1",
+    "options": {
+      "host": "localhost",
+      "dialect": "mssql",      
+      "logging": false
+    }
+  },
+  "devOptions": {
+    "mockdata": false,
+    "recreateDatabase": true   
+  }
+}

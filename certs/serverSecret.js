@@ -1,0 +1,8 @@
+module.exports.PrivateKey = `8WGi6slqLvGN3ueCM+v1SV7Iqr+vSUIruFP3CiJhBiIl6O
+HG0Q40mVAgMBAAECggEBAJJjjd0wO1Pu68ji/fHpsa6GBdSzhH0LoekIkDILTUTA
+3SrwEJY4JNDJSoDIxM2rSrdAKII0tIJoWxRMRh7v8BiR67LxVC2agGFVEAKanx6S
+SIOMxT+pboeRkXscz5oWCuY3nqj`;
+
+module.exports.Salt = 'shouldBeADifferentValueForEveryTime';
+
+module.exports.TokenValidityTimeInSeconds = 5;
