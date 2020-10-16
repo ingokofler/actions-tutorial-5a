@@ -1,7 +1,5 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const pupils2A = require('./data/Pupils2A.json');
-const allPupils = require('./data/allPupils.json');
 
 const {
 	server,
@@ -63,43 +61,5 @@ describe('GENERATE TEST DATA' + url, () => {
 				token = res.body.token;
 				done();
 			});
-	});
-
-
-	it('ZZ_05 Create Pupils and collect OU to Pupil Assignments per Id - 201', done => {
-		let relevantPupils = allPupils.Sheet0;
-		let classSelection = ["2AHIF", "3AHIF"];
-		let classOUMap = {
-			"2AHIF": "POS 2A",
-			"3AHIF": "POS Web 3A"
-		}
-		relevantPupils = relevantPupils.filter(p => classSelection.includes(p["klasse.name"]));
-
-		relevantPupils.forEach(p => {
-			let pupil = {
-				account: p.name,
-				lastname: p.longName,
-				firstname: p.foreName
-			};
-
-			chai
-				.request(server)
-				.post(`${backendUrl}/pupils`)
-				.send(pupil)
-				.set('Authorization', 'Bearer ' + token)
-				.end((err, res) => {
-					res.should.have.status(201);
-					generatedPupilsAndOURelation.push(
-						{
-							pupilid: res.body.id,
-							ouid: generatedOUIdsAndLabels[classOUMap[p["klasse.name"]]]
-						});
-
-					if (generatedPupilsAndOURelation.length == relevantPupils.length) {
-						console.log(`${relevantPupils.length} pupils created`);
-						done();
-					}
-				});
-		});
 	});
 });
