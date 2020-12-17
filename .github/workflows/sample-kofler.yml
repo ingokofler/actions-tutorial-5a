@@ -1,0 +1,11 @@
+name: "Workflow"
+on:
+  push:
+
+jobs:
+  helloWorldJob:
+    runs-on: ubuntu-18.04
+    name: "Hello WOrld Job"
+    steps:
+      - name: "Some output"
+        run: echo "Hello World"
