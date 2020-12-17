@@ -13,5 +13,13 @@ jobs:
       - name: "Checkout current source code"
         uses: actions/checkout@v2
 
+      - name: "Setup Node Environment v12"
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - name: "Output node version"
+        run: node -v
+
       - name: "Output working dir"
         run: pwd && ls -la
