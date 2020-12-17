@@ -24,5 +24,8 @@ jobs:
       - name: "Install Node dependencies"
         run: npm ci
 
+      - name: "Execute build"
+        run: npm run build
+
       - name: "Output working dir"
         run: pwd && ls -la
