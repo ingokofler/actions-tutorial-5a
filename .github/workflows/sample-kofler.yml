@@ -25,7 +25,10 @@ jobs:
         run: npm ci
 
       - name: "Execute build"
-        run: npm run build
+        run: npm run build --if-present
+
+      - name: "Execute test"
+        run: npm test
 
       - name: "Output working dir"
         run: pwd && ls -la
