@@ -9,3 +9,5 @@ jobs:
     steps:
       - name: "Some output"
         run: echo "Hello World"
+      - name: "Output working dir"
+        run: pwd && ls -la
