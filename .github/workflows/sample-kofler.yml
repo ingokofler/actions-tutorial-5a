@@ -21,5 +21,8 @@ jobs:
       - name: "Output node version"
         run: node -v
 
+      - name: "Install Node dependencies"
+        run: npm ci
+
       - name: "Output working dir"
         run: pwd && ls -la
