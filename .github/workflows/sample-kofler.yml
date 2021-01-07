@@ -36,6 +36,13 @@ jobs:
       - name: "Docker debug"
         run: docker ps
 
+      - name: "Prepare DB for Testing"
+        run:
+          CONTAINER_ID=$(docker ps -q --filter ancestor=mcr.microsoft.com/mssql/server:2019-latest) &&
+          echo $CONTAINER_ID &&
+          docker cp create-database.sql $CONTAINER_ID:/tmp/ &&
+          docker exec $CONTAINER_ID /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Strong123! -d master -i /tmp/create-database.sql
+
       - name: "Execute test"
         run: npm test
 
