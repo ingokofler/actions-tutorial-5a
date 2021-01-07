@@ -33,8 +33,21 @@ jobs:
       - name: "Debug etc/hosts"
         run: cat /etc/hosts
 
+      - name: "Docker debug"
+        run: docker ps
+
       - name: "Execute test"
         run: npm test
 
       - name: "Output working dir"
         run: pwd && ls -la
+
+    services:
+      mssql:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: Strong123!
+          MSSQL_PID: Express
+        ports:
+          - 1433:1433
