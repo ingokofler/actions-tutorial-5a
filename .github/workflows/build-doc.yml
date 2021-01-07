@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run pandoc
-        run: pandoc project-request.md -o project-request.pdf
+        run: pandoc --template=https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v1.4.0/eisvogel.tex project-request.md -o project-request.pdf
 
       - name: "Archive PDF as artifact"
         uses: actions/upload-artifact@v2
