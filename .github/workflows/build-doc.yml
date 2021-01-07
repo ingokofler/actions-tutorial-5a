@@ -1,0 +1,15 @@
+name: "Build Documentation"
+on:
+  push:
+
+jobs:
+  runPandoc:
+    runs-on: ubuntu-18.04
+    container: rstropek/pandoc-latex
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Run pandoc
+        run: pandoc README.md -o readme.pdf
