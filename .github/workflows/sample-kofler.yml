@@ -27,6 +27,12 @@ jobs:
       - name: "Execute build"
         run: npm run build --if-present
 
+      - name: "Configure Hostname"
+        run: echo "127.0.0.1  demo.app.info" | sudo tee -a /etc/hosts
+
+      - name: "Debug etc/hosts"
+        run: cat /etc/hosts
+
       - name: "Execute test"
         run: npm test
 
