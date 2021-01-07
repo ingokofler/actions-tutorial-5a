@@ -1,11 +1,11 @@
-name: "Workflow"
+name: "Backend Workflow"
 on:
   push:
 
 jobs:
-  helloWorldJob:
+  buildBackendJob:
     runs-on: ubuntu-18.04
-    name: "Hello WOrld Job"
+    name: "Build Backend"
     steps:
       - name: "Some output"
         run: echo "Hello World"
